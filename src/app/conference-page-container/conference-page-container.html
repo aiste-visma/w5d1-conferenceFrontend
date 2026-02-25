@@ -1,0 +1,17 @@
+<h2>Conference Attendee Registration</h2>
+
+<app-attendee-form (register)="handleAttendeeRegistration($event)"></app-attendee-form>
+
+@if (submittedAttendee) {
+  <div class="mt-3">
+    <h3>Registered Attendee:</h3>
+    <p><strong>First Name:</strong> {{ submittedAttendee.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ submittedAttendee.lastName }}</p>
+    <p><strong>Username:</strong> {{ submittedAttendee.userName }}</p>
+    <p><strong>Email:</strong> {{ submittedAttendee.emailAddress }}</p>
+  </div>
+}
+
+<hr>
+
+<app-speaker-results [speakers]="mockSpeakers"></app-speaker-results>

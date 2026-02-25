@@ -1,0 +1,20 @@
+
+<div class="speakers-section">
+  <h2>Our Speakers</h2>
+
+  @if (speakers.length === 0) {
+    <p class="no-speakers-message">No speakers found.</p>
+  } @else {
+    <div class="speakers-grid">
+      @for (speaker of speakers; track speaker.id) {
+        <div class="speaker-card">
+          <h3 class="speaker-name">{{ speaker.name }}</h3>
+          <p class="speaker-bio">{{ speaker.bio }}</p>
+          @if (speaker.webSite) {
+            <a [href]="speaker.webSite" target="_blank" class="speaker-website">Visit Website</a>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

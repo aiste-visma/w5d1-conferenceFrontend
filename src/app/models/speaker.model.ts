@@ -2,11 +2,11 @@ export interface Speaker {
     id: number;
     name: string;
     bio: string;
-    website: string;
+    webSite: string;
 }
 
 export interface CreateSpeaker {
     name: string;
     bio: string;
-    website: string;
+    webSite: string;
 }

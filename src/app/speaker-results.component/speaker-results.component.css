@@ -1,0 +1,78 @@
+
+.speakers-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.speakers-section h2 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.no-speakers-message {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.speaker-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.speaker-name {
+  color: #aa18aa;
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.speaker-bio {
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.speaker-website {
+  display: inline-block;
+  background-color: #a7289a;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+
+.speaker-website:hover {
+  background-color: #8d2282;
+}
