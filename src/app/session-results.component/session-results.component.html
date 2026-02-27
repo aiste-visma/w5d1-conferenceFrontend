@@ -1,0 +1,22 @@
+
+<div class="sessions-section">
+  <h2>Conference Schedule</h2>
+
+  @if (sessions.length === 0) {
+    <p class="no-sessions-message">No sessions scheduled yet.</p>
+  } @else {
+    <div class="sessions-list">
+      @for (session of sessions; track session.id) {
+        <div class="session-card">
+          <h3 class="session-title">{{ session.title }}</h3>
+          <p class="session-time">
+            {{ session.startTime | dateTimeFormat:'shortTime' }} -
+            {{ session.endTime | dateTimeFormat:'shortTime' }}
+            <span class="session-date">({{ session.startTime | dateTimeFormat:'MMM d, y' }})</span>
+          </p>
+          <p class="session-abstract">{{ session.abstract }}</p>
+        </div>
+      }
+    </div>
+  }
+</div>

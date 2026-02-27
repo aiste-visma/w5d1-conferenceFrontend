@@ -2,16 +2,17 @@
 
 <app-attendee-form (register)="handleAttendeeRegistration($event)"></app-attendee-form>
 
-@if (submittedAttendee) {
+@if (submittedAttendeeSignal) {
   <div class="mt-3">
     <h3>Registered Attendee:</h3>
-    <p><strong>First Name:</strong> {{ submittedAttendee.firstName }}</p>
-    <p><strong>Last Name:</strong> {{ submittedAttendee.lastName }}</p>
-    <p><strong>Username:</strong> {{ submittedAttendee.userName }}</p>
-    <p><strong>Email:</strong> {{ submittedAttendee.emailAddress }}</p>
+    <p><strong>First Name:</strong> {{ submittedAttendeeSignal.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ submittedAttendeeSignal.lastName }}</p>
+    <p><strong>Username:</strong> {{ submittedAttendeeSignal.userName }}</p>
+    <p><strong>Email:</strong> {{ submittedAttendeeSignal.emailAddress }}</p>
   </div>
 }
 
 <hr>
-
+<app-session-results [sessions]="mockSessions"></app-session-results>
+<hr>
 <app-speaker-results [speakers]="mockSpeakers"></app-speaker-results>

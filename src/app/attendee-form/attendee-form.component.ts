@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 @Component({
     selector: 'app-attendee-form',
     templateUrl: './attendee-form.component.html',
+    styleUrl: './attendee-form.component.css',
     imports: [FormsModule, CommonModule]
 })
 
