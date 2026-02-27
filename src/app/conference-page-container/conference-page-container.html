@@ -8,11 +8,23 @@
     <p><strong>First Name:</strong> {{ submittedAttendeeSignal.firstName }}</p>
     <p><strong>Last Name:</strong> {{ submittedAttendeeSignal.lastName }}</p>
     <p><strong>Username:</strong> {{ submittedAttendeeSignal.userName }}</p>
-    <p><strong>Email:</strong> {{ submittedAttendeeSignal.emailAddress }}</p>
   </div>
 }
 
 <hr>
-<app-session-results [sessions]="mockSessions"></app-session-results>
+@if (loadingErrors && loadingErrors.length) {
+  <div class="alert alert-danger">
+    <strong>Oops!</strong> Problems occurred while loading:
+    <ul class="mb-0">
+      @for (err of loadingErrors; track $index) {
+        <li>{{ err }}</li>
+      }
+    </ul>
+  </div>
+}
 <hr>
-<app-speaker-results [speakers]="mockSpeakers"></app-speaker-results>
+<app-session-results [sessions]="(mockSessions$ | async) || []"></app-session-results>
+<hr>
+<app-speaker-results [speakers]="(Speakers$ | async) || []"></app-speaker-results>
+
+

@@ -1,14 +1,17 @@
-<form #attendeeForm="ngForm" (ngSubmit)="onSubmit(attendeeForm)">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="firstName">First Name:</label>
     <input
       type="text"
       id="firstName"
-      name="firstName"
-      ngModel
-      required
+      formControlName="firstName"
       class="form-control"
     />
+    @if (form.controls['firstName'].invalid && form.controls['firstName'].touched) {
+      <div class="text-danger">
+        First name is required
+      </div>
+    }
   </div>
 
   <div class="form-group">
@@ -16,11 +19,14 @@
     <input
       type="text"
       id="lastName"
-      name="lastName"
-      ngModel
-      required
+      formControlName="lastName"
       class="form-control"
     />
+    @if (form.controls['lastName'].invalid && form.controls['lastName'].touched) {
+      <div class="text-danger">
+        Last name is required
+      </div>
+    }
   </div>
 
   <div class="form-group">
@@ -28,11 +34,24 @@
     <input
       type="text"
       id="userName"
-      name="userName"
-      ngModel
-      required
+      formControlName="userName"
       class="form-control"
     />
+    @if (form.controls['userName'].errors?.['required'] && form.controls['userName'].touched) {
+      <div class="text-danger">
+        Username is required
+      </div>
+    }
+    @if (form.controls['userName'].errors?.['duplicate']) {
+      <div class="text-danger">
+        Username already taken
+      </div>
+    }
+    @if (fieldErrors['userName']) {
+      <div class="text-danger fst-italic small">
+        {{ fieldErrors['userName'] }}
+      </div>
+    }
   </div>
 
   <div class="form-group">
@@ -40,18 +59,43 @@
     <input
       type="email"
       id="emailAddress"
-      name="emailAddress"
-      ngModel
+      formControlName="emailAddress"
       class="form-control"
-      #emailCtrl="ngModel"
-      pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
     />
-    <div *ngIf="emailCtrl.invalid && emailCtrl.dirty" class="text-danger">
-      Please enter a valid email address
-    </div>
+    @if (form.controls['emailAddress'].errors?.['required'] && form.controls['emailAddress'].touched) {
+      <div class="text-danger">
+        Email is required
+      </div>
+    }
+    @if (form.controls['emailAddress'].errors?.['email'] && form.controls['emailAddress'].touched) {
+      <div class="text-danger">
+        Enter a valid email
+      </div>
+    }
+    @if (fieldErrors['emailAddress']) {
+      <div class="text-danger fst-italic small">
+        {{ fieldErrors['emailAddress'] }}
+      </div>
+    }
+ 
   </div>
 
-  <button type="submit" [disabled]="!attendeeForm.valid" class="btn btn-primary">
-    Register
+  @if (serverMessage) {
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+      <div>{{ serverMessage }}</div>
+    </div>
+  }
+
+  @if (serverDown) {
+    <div class="alert alert-danger">Server appears to be down — registration is disabled.</div>
+  }
+
+  <button type="submit" [disabled]="form.invalid || isLoading || serverDown" class="btn btn-primary">
+    @if (isLoading) {
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Loading...
+    } @else {
+      Register
+    }
   </button>
 </form>

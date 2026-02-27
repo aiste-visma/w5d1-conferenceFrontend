@@ -39,6 +39,7 @@ label {
 
 .ng-invalid.ng-touched:not(form) {
   border-color: #dc3545;
+  background-color: #f8d7da;
 }
 
 .ng-valid.ng-touched:not(form) {
