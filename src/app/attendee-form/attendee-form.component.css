@@ -2,9 +2,10 @@ form {
   max-width: 500px;
   margin: 30px auto;
   padding: 30px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--cute-surface);
+  border-radius: 12px;
+  border: 1px solid var(--cute-border);
+  box-shadow: var(--cute-shadow);
   font-family: Arial, sans-serif;
 }
 
@@ -16,38 +17,39 @@ label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #333;
+  color: var(--cute-text);
   font-size: 0.95em;
 }
 
 .form-control {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--cute-border);
+  background-color: #fffaff;
   border-radius: 8px;
   font-size: 1em;
-  color: #495057;
+  color: var(--cute-text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
 }
 
 .form-control:focus {
-  border-color: #80bdff;
+  border-color: var(--cute-primary);
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(201, 136, 239, 0.25);
 }
 
 .ng-invalid.ng-touched:not(form) {
-  border-color: #dc3545;
-  background-color: #f8d7da;
+  border-color: var(--cute-danger);
+  background-color: #ffe7f3;
 }
 
 .ng-valid.ng-touched:not(form) {
-  border-color: #28a745;
+  border-color: var(--cute-success);
 }
 
 .text-danger {
-  color: #dc3545;
+  color: var(--cute-danger);
   font-size: 0.85em;
   margin-top: 5px;
   display: block;
@@ -60,26 +62,36 @@ label {
   font-size: 1.1em;
   font-weight: bold;
   color: #fff;
-  background-color: #007bff;
-  border: 1px solid #007bff;
+  background: linear-gradient(135deg, var(--cute-primary), #db8fd9);
+  border: 1px solid var(--cute-primary);
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background: linear-gradient(135deg, var(--cute-primary-strong), #cb77cb);
+  border-color: var(--cute-primary-strong);
 }
 
 .btn-primary:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(201, 136, 239, 0.45);
 }
 
 .btn-primary:disabled {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #d9c6e8;
+  border-color: #d9c6e8;
   cursor: not-allowed;
   opacity: 0.7;
 }
+
+h2 {
+  color: var(--cute-primary);
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+

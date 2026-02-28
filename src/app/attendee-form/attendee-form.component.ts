@@ -23,7 +23,7 @@ export class AttendeeFormComponent implements OnDestroy {
     serverMessage = '';
     isLoading = false;
     serverDown = false;
-    fieldErrors: { [key: string]: string } = {}; // errors returned per field from backend
+    fieldErrors: { [key: string]: string } = {};
     private networkSub?: Subscription;
 
     constructor(private fb: FormBuilder, private api: ApiService, private network: NetworkStatusService) {
@@ -66,14 +66,10 @@ export class AttendeeFormComponent implements OnDestroy {
                 timeout(5000),
                 map(user => user ? { duplicate: true } : null),
                 catchError(err => {
-                    // if the uniqueness check times out or the network is down,
-                    // mark serverDown so the UI can disable the form and show a message
                     if (err && (err.name === 'TimeoutError' || (err.status !== undefined && err.status === 0))) {
-                        // notify global network state but do not repeatedly set messages
                         try { this.network.setDown(true); } catch { /* noop */ }
                         return of(null);
                     }
-                    // 404 -> no user found
                     if (err && err.status === 404) {
                         return of(null);
                     }

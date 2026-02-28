@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ConferencePageContainer } from './conference-page-container/conference-page-container';
+import { AppNavigationComponent } from './app-navigation/app-navigation.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ConferencePageContainer],
+  imports: [RouterOutlet, AppNavigationComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

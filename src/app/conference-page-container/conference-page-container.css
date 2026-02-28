@@ -1,16 +1,16 @@
 .alert-danger {
-  color: #721c24;
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  border-radius: 0.25rem;
+  color: #8f3f6f;
+  background-color: #ffe7f3;
+  border: 1px solid #f1b9d8;
+  border-radius: 0.5rem;
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
 }
 
 .alert-danger hr {
-  border-top-color: #f1b0b7;
+  border-top-color: #eb9dca;
 }
 
 .alert-danger .alert-link {
-  color: #491217;
+  color: #6c2a51;
 }

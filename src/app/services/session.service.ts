@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Session } from '../models/session.model';
+import { CreateSession, Session } from '../models/session.model';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 
@@ -11,6 +11,14 @@ export class SessionService {
 
   getSessions(): Observable<Session[]> {
     return this.api.get<Session[]>(this.api.endpoints.sessions);
+  }
+
+  getSessionById(id: number): Observable<Session> {
+    return this.api.get<Session>(`${this.api.endpoints.sessions}/${id}`);
+  }
+
+  createSession(session: CreateSession): Observable<Session> {
+    return this.api.post<Session>(this.api.endpoints.sessions, session);
   }
   
 }

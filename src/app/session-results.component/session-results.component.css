@@ -1,27 +1,29 @@
 .sessions-section {
   padding: 20px;
-  background-color: #f0f8ff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff1fb;
+  border-radius: 10px;
+  border: 1px solid var(--cute-border);
+  box-shadow: var(--cute-shadow);
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
 .sessions-section h2 {
-  color: #2196f3;
+  color: var(--cute-primary-strong);
   font-size: 2em;
   margin-bottom: 25px;
   text-align: center;
 }
 
 .no-sessions-message {
-  color: #666;
+  color: var(--cute-text-soft);
   font-style: italic;
   text-align: center;
   padding: 20px;
-  border: 1px dashed #a0dfff;
-  border-radius: 5px;
+  border: 1px dashed #dcb7f4;
+  border-radius: 8px;
   margin-bottom: 20px;
+  background-color: #fff9ff;
 }
 
 .sessions-list {
@@ -31,30 +33,41 @@
 }
 
 .session-card {
-  background-color: #fff;
-  border: 1px solid #b3e0ff;
-  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid var(--cute-border);
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(171, 130, 204, 0.12);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
 }
 
 .session-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(171, 130, 204, 0.2);
 }
 
 .session-title {
-  color: #3f51b5;
+  color: #9154bf;
   font-size: 1.4em;
   margin-top: 0;
   margin-bottom: 10px;
 }
 
+.session-link {
+  color: #9154bf;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.session-link:hover {
+  color: var(--cute-primary-strong);
+  text-decoration: underline;
+}
+
 .session-time {
-  color: #607d8b;
+  color: #7f6a95;
   font-size: 1em;
   margin-bottom: 5px;
   font-weight: bold;
@@ -62,12 +75,12 @@
 
 .session-date {
   font-size: 0.9em;
-  color: #9e9e9e;
+  color: #a089b8;
   font-weight: normal;
 }
 
 .session-abstract {
-  color: #555;
+  color: #6d5a7f;
   font-size: 0.9em;
   line-height: 1.5;
   flex-grow: 1;
@@ -76,10 +89,10 @@
 
 .session-track {
   display: inline-block;
-  background-color: #8bc34a;
+  background-color: #cc8fe6;
   color: white;
   padding: 5px 10px;
-  border-radius: 4px;
+  border-radius: 999px;
   font-size: 0.85em;
   align-self: flex-start;
 }

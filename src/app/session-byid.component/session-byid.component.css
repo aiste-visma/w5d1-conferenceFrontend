@@ -1,0 +1,107 @@
+.session-detail-section {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-navigation {
+  margin-bottom: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff1fb;
+  color: var(--cute-primary-strong);
+  text-decoration: none;
+  border: 1px solid var(--cute-border);
+  border-radius: 999px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  background-color: var(--cute-primary-soft);
+  color: #8d4fbc;
+}
+
+.session-detail-card {
+  background-color: #fff;
+  border: 1px solid var(--cute-border);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: var(--cute-shadow);
+}
+
+.session-title {
+  color: #8c4bb8;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d9b2f2;
+  padding-bottom: 15px;
+}
+
+.session-meta {
+  background-color: #fff3fc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.session-meta p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  color: var(--cute-text);
+}
+
+.session-meta strong {
+  color: #9a5cc8;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.session-time,
+.session-date,
+.session-id,
+.session-track {
+  padding: 5px 0;
+}
+
+.session-abstract-section {
+  margin-top: 30px;
+}
+
+.session-abstract-section h3 {
+  color: #9a5cc8;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.session-abstract {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #6c5a80;
+  text-align: justify;
+  padding: 15px;
+  background-color: #fff9ff;
+  border-left: 4px solid #d4a6ef;
+  border-radius: 6px;
+}
+
+.error-message {
+  background-color: #ffe7f3;
+  color: #a04477;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #f1b9d8;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.loading-message {
+  text-align: center;
+  color: #8a72a2;
+  font-size: 1.2em;
+  font-style: italic;
+  padding: 40px;
+}

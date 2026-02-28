@@ -1,0 +1,33 @@
+<div class="session-detail-section">
+  <div class="back-navigation">
+    <a routerLink="/conferences" class="back-link">← Back to All Sessions</a>
+  </div>
+  @if (session) {
+    <div class="session-detail-card">
+      <h2 class="session-title">{{ session.title }}</h2>
+      <div class="session-meta">
+        <p class="session-time">
+          <strong>Time:</strong>
+          {{ session.startTime | dateTimeFormat:'shortTime' }} -
+          {{ session.endTime | dateTimeFormat:'shortTime' }}
+        </p>
+        <p class="session-date">
+          <strong>Date:</strong>
+          {{ session.startTime | dateTimeFormat:'MMM d, y' }}
+        </p>
+        <p class="session-id">
+          <strong>Session ID:</strong> {{ session.id }}
+        </p>
+        <p class="session-track">
+          <strong>Track ID:</strong> {{ session.trackId }}
+        </p>
+      </div>
+      <div class="session-abstract-section">
+        <h3>Description</h3>
+        <p class="session-abstract">{{ session.abstract }}</p>
+      </div>
+    </div>
+  } @else {
+    <p class="loading-message">Loading session...</p>
+  }
+</div>

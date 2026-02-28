@@ -72,6 +72,24 @@ export class ApiService {
     );
   }
 
+  getSessionById(id: number): Observable<any> {
+    return this.get<any>(`${this.endpoints.sessions}/${id}`).pipe(
+      catchError(err => {
+        console.error(`API getSessionById(${id}) failed`, err);
+        return throwError(() => err);
+      })
+    );
+  }
+
+  createSession(session: any): Observable<any> {
+    return this.post<any>(this.endpoints.sessions, session).pipe(
+      catchError(err => {
+        console.error('API createSession failed', err);
+        return throwError(() => err);
+      })
+    );
+  }
+
   getSpeakers(): Observable<any> {
     return this.get<any>(this.endpoints.speakers).pipe(
       catchError(err => {

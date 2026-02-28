@@ -1,18 +1,16 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { SessionService } from '../services/session.service';
 import { Session } from '../models/session.model';
 import { DateTimeFormatPipe } from '../date-time-format.pipe';
 
 @Component({
-  selector: 'app-session-results',
+  selector: 'app-session-byid',
   imports: [CommonModule, DateTimeFormatPipe, RouterLink],
   providers: [DatePipe],
-  templateUrl: './session-results.component.html',
-  styleUrl: './session-results.component.css',
+  templateUrl: './session-byid.component.html',
+  styleUrl: './session-byid.component.css',
 })
-export class SessionResultsComponent {
-
-  @Input() sessions: Session[] = [];
+export class SessionByIdComponent {
+  @Input() session: Session | null = null;
 }

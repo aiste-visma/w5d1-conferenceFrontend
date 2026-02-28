@@ -1,5 +1,3 @@
-<h2>Conference Attendee Registration</h2>
-
 <app-attendee-form (register)="handleAttendeeRegistration($event)"></app-attendee-form>
 
 @if (submittedAttendeeSignal) {
@@ -10,8 +8,6 @@
     <p><strong>Username:</strong> {{ submittedAttendeeSignal.userName }}</p>
   </div>
 }
-
-<hr>
 @if (loadingErrors && loadingErrors.length) {
   <div class="alert alert-danger">
     <strong>Oops!</strong> Problems occurred while loading:
@@ -22,8 +18,6 @@
     </ul>
   </div>
 }
-<hr>
-<app-session-results [sessions]="(mockSessions$ | async) || []"></app-session-results>
 <hr>
 <app-speaker-results [speakers]="(Speakers$ | async) || []"></app-speaker-results>
 

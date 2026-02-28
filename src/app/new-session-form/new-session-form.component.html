@@ -1,0 +1,115 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Create New Session</h2>
+
+  <div class="form-group">
+    <label for="title">Session Title:</label>
+    <input
+      type="text"
+      id="title"
+      formControlName="title"
+      class="form-control"
+      placeholder="Enter session title"
+    />
+    @if (form.controls['title'].errors?.['required'] && form.controls['title'].touched) {
+      <div class="text-danger">
+        Title is required
+      </div>
+    }
+    @if (form.controls['title'].errors?.['minlength'] && form.controls['title'].touched) {
+      <div class="text-danger">
+        Title must be at least 3 characters
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="abstract">Abstract:</label>
+    <textarea
+      id="abstract"
+      formControlName="abstract"
+      class="form-control"
+      rows="5"
+      placeholder="Enter session abstract"
+    ></textarea>
+    @if (form.controls['abstract'].errors?.['required'] && form.controls['abstract'].touched) {
+      <div class="text-danger">
+        Abstract is required
+      </div>
+    }
+    @if (form.controls['abstract'].errors?.['minlength'] && form.controls['abstract'].touched) {
+      <div class="text-danger">
+        Abstract must be at least 10 characters
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="startTime">Start Time:</label>
+    <input
+      type="datetime-local"
+      id="startTime"
+      formControlName="startTime"
+      class="form-control"
+    />
+    @if (form.controls['startTime'].invalid && form.controls['startTime'].touched) {
+      <div class="text-danger">
+        Start time is required
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="endTime">End Time:</label>
+    <input
+      type="datetime-local"
+      id="endTime"
+      formControlName="endTime"
+      class="form-control"
+    />
+    @if (form.controls['endTime'].invalid && form.controls['endTime'].touched) {
+      <div class="text-danger">
+        End time is required
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="trackId">Track ID:</label>
+    <input
+      type="number"
+      id="trackId"
+      formControlName="trackId"
+      class="form-control"
+      min="1"
+    />
+    @if (form.controls['trackId'].errors?.['required'] && form.controls['trackId'].touched) {
+      <div class="text-danger">
+        Track ID is required
+      </div>
+    }
+    @if (form.controls['trackId'].errors?.['min'] && form.controls['trackId'].touched) {
+      <div class="text-danger">
+        Track ID must be at least 1
+      </div>
+    }
+  </div>
+
+  @if (serverMessage) {
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+      <div>{{ serverMessage }}</div>
+    </div>
+  }
+
+  @if (serverDown) {
+    <div class="alert alert-danger">Server appears to be down — session creation is disabled.</div>
+  }
+
+  <button type="submit" [disabled]="form.invalid || isLoading || serverDown" class="btn btn-primary">
+    @if (isLoading) {
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Creating...
+    } @else {
+      Create Session
+    }
+  </button>
+</form>

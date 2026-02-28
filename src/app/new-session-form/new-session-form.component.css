@@ -1,0 +1,138 @@
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: var(--cute-surface);
+  border-radius: 12px;
+  border: 1px solid var(--cute-border);
+  box-shadow: var(--cute-shadow);
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: var(--cute-primary-strong);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--cute-text);
+  font-size: 0.95em;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--cute-border);
+  background-color: #fffaff;
+  border-radius: 8px;
+  font-size: 1em;
+  color: var(--cute-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-control:focus {
+  border-color: var(--cute-primary);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(201, 136, 239, 0.25);
+}
+
+.ng-invalid.ng-touched:not(form) {
+  border-color: var(--cute-danger);
+  background-color: #ffe7f3;
+}
+
+.ng-valid.ng-touched:not(form) {
+  border-color: var(--cute-success);
+}
+
+.text-danger {
+  color: var(--cute-danger);
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+
+.alert {
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+
+.alert-warning {
+  background-color: #fff1fb;
+  border: 1px solid #efc8ef;
+  color: #8b5ba3;
+}
+
+.alert-danger {
+  background-color: #ffe7f3;
+  border: 1px solid #f1b9d8;
+  color: #9a3e72;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--cute-primary), #db8fd9);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--cute-primary-strong), #cb77cb);
+  transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+  background-color: #d9c6e8;
+  cursor: not-allowed;
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: text-bottom;
+  border: 0.15em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+.spinner-border-sm {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-width: 0.15em;
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}

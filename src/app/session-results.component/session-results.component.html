@@ -8,7 +8,11 @@
     <div class="sessions-list">
       @for (session of sessions; track session.id) {
         <div class="session-card">
-          <h3 class="session-title">{{ session.title }}</h3>
+          <h3 class="session-title">
+            <a [routerLink]="['/conference', session.id]" class="session-link">
+              {{ session.title }}
+            </a>
+          </h3>
           <p class="session-time">
             {{ session.startTime | dateTimeFormat:'shortTime' }} -
             {{ session.endTime | dateTimeFormat:'shortTime' }}
